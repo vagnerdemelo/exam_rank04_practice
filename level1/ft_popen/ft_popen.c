@@ -1,9 +1,10 @@
 #include "fcntl.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 int ft_popen(const char *file, char *const argv[], char type)
 {
-	if (!file || !argv || type != 'w' && type != 'r')
+	if (!file || !argv || (type != 'w' && type != 'r'))
 		return -1;
 
 	int fd[2];
@@ -11,12 +12,6 @@ int ft_popen(const char *file, char *const argv[], char type)
 		return -1;
 
 	pid_t pid = fork();
-	if (pid == -1)
-	{
-		close(fd[0]);
-		close(fd[1]);
-		return -1;
-	}
 
 	if (pid == 0) // processo filho
 	{
@@ -48,4 +43,8 @@ int ft_popen(const char *file, char *const argv[], char type)
 			return fd[1];
 		}
 	}
+
+	close(fd[0]);
+	close(fd[1]);
+	return -1;
 }
