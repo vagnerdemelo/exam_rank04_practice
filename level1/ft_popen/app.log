@@ -6,3 +6,8 @@ Hello Vagner
 Hello Vagner
 Hello Vagner
 Hello Vagner
+total 28
+-rwxrwxr-x 1 vagner vagner 16096 Nov  9 21:38 a
+-rw-rw-r-- 1 vagner vagner  1017 Nov  9 21:31 annotations.md
+-rw-rw-r-- 1 vagner vagner   104 Nov  9 20:10 app.log
+-rw-rw-r-- 1 vagner vagner   204 Nov  9 21:38 main.c
